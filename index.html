@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch a Sketch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Teko&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="menu">
+        <h1 class="title">Etch a Sketch</h1>
+        <input id="color" type="color" value="#ffffff" />
+        <button class="btn active" data-click="standard">Standard</button>
+        <button class="btn" data-click="rainbow">Rainbow</button>
+        <button class="btn" data-click="eraser">Eraser</button>
+        <button class="btn" data-click="clear">Clear</button>
+        <p id="rangeValue" class="size-value">42 x 42</p>
+        <input id="range" type="range" value="16" min="1" max="64" />
+      </div>
+      <div class="canvas"></div>
+    </div>
+    <script src="./assets/js/script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+:root {
+  --base: #404550;
+  --bg-panel: #252a35;
+  --bg-canvas: #252525;
+  --bg-input: #60606a;
+  --bg-hover: #6a6a7a;
+  --br: #252a35;
+  --text-color: #f0f0fa;
+}
+
+body {
+  font-family: "Teko", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-canvas);
+  overflow: hidden;
+  user-select: none;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.menu {
+  flex-direction: column;
+  display: flex;
+  min-width: 200px;
+  width: 200px;
+  height: 100%;
+  background-color: var(--bg-panel);
+  border-right: 1px var(--br) solid;
+  color: var(--text-color);
+  padding: 32px;
+  gap: 8px;
+}
+
+.btn {
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: inherit;
+  background-color: var(--bg-input);
+  border: 1px solid var(--bg-input);
+  border-radius: 4px;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: 0.1s background-color;
+}
+
+.btn:hover {
+  background-color: var(--bg-hover);
+}
+
+.btn.active {
+  background-color: var(--bg-canvas);
+  pointer-events: none;
+}
+
+.title {
+  font-size: 38px;
+  letter-spacing: 0.1em;
+  margin-block: 0 24px;
+}
+
+.size-value {
+  font-size: 32px;
+  letter-spacing: 0.1em;
+  margin: 24px auto 8px;
+  text-align: center;
+}
+
+.canvas {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94vh;
+  height: auto;
+  aspect-ratio: 1/1;
+  background-color: var(--text-color);
+  border-radius: 20px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.canvas div {
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border: none;
+  background: transparent;
+  width: 50%;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 100px;
+  outline: none;
+  cursor: pointer;
+  overflow: hidden;
+  margin: 0 auto 16px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 100px;
+}
+
+input[type="color"]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+  border-radius: 100px;
+}
+
+input[type="color"]::-moz-color-swatch {
+  border: none;
+  border-radius: 100px;
+  aspect-ratio: 1/1;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px var(--br), 0px 0px 1px var(--bg-canvas);
+  background: var(--bg-input);
+  border-radius: 1.3px;
+  border: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px var(--br), 0px 0px 1px var(--bg-canvas);
+  border: 1px solid var(--br);
+  height: 32px;
+  width: 16px;
+  border-radius: 4px;
+  background: var(--text-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+}
+input[type="range"]:focus::-webkit-slider-runnable-track {
+  background: var(--bg-hover);
+}
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px var(--br), 0px 0px 1px var(--bg-canvas);
+  background: var(--bg-input);
+  border-radius: 1.3px;
+  border: none;
+}
+input[type="range"]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px var(--br), 0px 0px 1px var(--bg-canvas);
+  border: 1px solid var(--br);
+  height: 32px;
+  width: 16px;
+  border-radius: 4px;
+  background: var(--text-color);
+  cursor: pointer;
+}
+input[type="range"]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type="range"]::-ms-fill-lower {
+  background: var(--bg-input);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px var(--br), 0px 0px 1px var(--bg-canvas);
+}
+input[type="range"]::-ms-fill-upper {
+  background: var(--bg-input);
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px var(--br), 0px 0px 1px var(--bg-canvas);
+}
+input[type="range"]::-ms-thumb {
+  box-shadow: 1px 1px 1px var(--br), 0px 0px 1px var(--bg-canvas);
+  border: 1px solid var(--br);
+  height: 32px;
+  width: 16px;
+  border-radius: 4px;
+  background: var(--text-color);
+  cursor: pointer;
+}
+input[type="range"]:focus::-ms-fill-lower {
+  background: var(--bg-input);
+}
+input[type="range"]:focus::-ms-fill-upper {
+  background: var(--bg-hover);
+}
