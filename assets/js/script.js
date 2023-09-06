@@ -43,7 +43,16 @@ function createPixel(width) {
 }
 
 function drawing({ target }) {
-  target.style.backgroundColor = getColor();
+  if (target.dataset.pixel == "true") {
+    let pixel = canvas.querySelector("[data-pixel='false']");
+
+    if (pixel) {
+      pixel.dataset.pixel = "true";
+    }
+
+    target.dataset.pixel = "false";
+    target.style.backgroundColor = getColor();
+  }
 }
 
 function startDrawing() {
@@ -70,11 +79,11 @@ function getColor() {
 }
 
 function getRandomColor() {
-  var letters = "0123456789ABCDEF";
+  var letters = "6789ABCDEF"; // this way only light colors will be obtained
   var color = "#";
 
   for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
+    color += letters[Math.floor(Math.random() * 10)];
   }
 
   return color;
