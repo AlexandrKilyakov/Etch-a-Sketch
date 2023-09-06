@@ -6,6 +6,7 @@
   --bg-hover: #6a6a7a;
   --br: #252a35;
   --text-color: #f0f0fa;
+  --canvas: #f0f0fa;
 }
 
 body {
@@ -73,12 +74,13 @@ body {
 }
 
 .canvas {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 94vh;
   height: auto;
   aspect-ratio: 1/1;
-  background-color: var(--text-color);
+  background-color: var(--canvas);
   border-radius: 20px;
   margin: auto;
   overflow: hidden;
