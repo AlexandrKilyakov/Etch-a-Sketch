@@ -44,11 +44,7 @@ function createPixel(width) {
 
 function drawing({ target }) {
   if (target.dataset.pixel == "true") {
-    let pixel = canvas.querySelector("[data-pixel='false']");
-
-    if (pixel) {
-      pixel.dataset.pixel = "true";
-    }
+    setPixel();
 
     target.dataset.pixel = "false";
     target.style.backgroundColor = getColor();
@@ -61,18 +57,28 @@ function startDrawing() {
 
 function endDrawing() {
   canvas.removeEventListener("mousemove", drawing);
+
+  setPixel();
+}
+
+function setPixel() {
+  let pixel = canvas.querySelector("[data-pixel='false']");
+
+  if (pixel) {
+    pixel.dataset.pixel = "true";
+  }
 }
 
 function getColor() {
   const mode = document.querySelector(selectors.mode);
+  const colorMode = {
+    standard: color.value,
+    rainbow: getRandomColor(),
+    eraser: "var(--canvas)",
+  };
 
-  switch (mode.dataset.mode) {
-    case "standard":
-      return color.value;
-    case "rainbow":
-      return getRandomColor();
-    case "eraser":
-      return "var(--canvas)";
+  if (colorMode.hasOwnProperty(mode.dataset.mode)) {
+    return colorMode[mode.dataset.mode];
   }
 
   return "#ffffff";
