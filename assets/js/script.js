@@ -85,11 +85,12 @@ function getColor() {
 }
 
 function getRandomColor() {
-  var letters = "6789ABCDEF"; // this way only light colors will be obtained
-  var color = "#";
+  const letters = "789ABCDEF"; // this way only light colors will be obtained
+  const max = letters.length;
+  let color = "#";
 
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 10)];
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * max)];
   }
 
   return color;
